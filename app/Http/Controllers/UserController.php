@@ -73,7 +73,7 @@ class UserController extends Controller
     {
          $user_id = $request->user_id;
 
-        $user_mobile = User::where('id','=',$user_id)->first()->mobile;
+        $user_mobile ='01845318609'; //User::where('id','=',$user_id)->first()->mobile;
         $subscription = new Subscription('https://developer.bdapps.com/subscription/send',$this->app_id,$this->app_password);
         $subscription->subscribe('tel:88'.$user_mobile);
          return response()->json(['response'=>"ok"]);
