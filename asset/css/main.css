@@ -1569,7 +1569,7 @@ select.uk-form-width-xsmall {
 
 .uk-section {
 	box-sizing: border-box;
-	background:#1B1B1B;
+	background:#002d56;
 	padding-top: 40px;
 	padding-bottom: 40px
 }
@@ -3564,7 +3564,7 @@ ul.uk-nav-sub {
 
 .uk-accordion-title:focus,
 .uk-accordion-title:hover {
-	color: #425869;
+	color: #d6dde1;
 	text-decoration: none;
 	outline: 0
 }
@@ -5338,7 +5338,7 @@ iframe.uk-cover {
 }
 
 .uk-background-primary {
-	    background-image: linear-gradient(#dcb466, #efa06b);
+	    background-image: linear-gradient(#1d90e4, #0b4784);
 }
 
 .uk-background-secondary {

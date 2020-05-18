@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('faq',function()
 {
-   return view('faq');
+   return view('faq');  
 }
 
 );
@@ -26,12 +26,10 @@ Route::get('faq',function()
 
 Route::get('prize_pool',function()
 {
-   return view('prize_pool');
+   return view('prize_pool');  
 }
 
 );
-
-Route::post('subscription','UserController@subscription');
 
 Route::post('ussd','UserController@ussd');
 
