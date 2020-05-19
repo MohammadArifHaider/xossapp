@@ -21,11 +21,13 @@ $production=true;
 try{
 	$subscription = new Subscription('https://developer.bdapps.com/subscription/send',$apppassword,$appid);
 	$subscription_status = $subscription->getStatus('tel:88'.$user_mobile);
-	echo $subscription_status;
+	//echo $subscription_status;
 	if($subscription_status==="REGISTERED")
 	{
- //  $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
-// $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,"2");
+
+  $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
+  $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,"0.1");
+  echo $cass_status;
 	}
 
 
