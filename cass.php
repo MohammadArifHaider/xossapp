@@ -5,6 +5,7 @@ require 'bdapps_cass_sdk.php';
 $appid = "APP_024542";
 $apppassword = "c48a35689fb237bdc7aa85626556b5dc";
 $user_mobile = $_POST['user_mobile'];
+$charge = $_POST['charge'];
 $response=array();
 
 //file_put_contents('ussd.txt',$_SERVER['REMOTE_ADDR']);
@@ -26,7 +27,7 @@ try{
 	{
   
   $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
-  $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,"0.1");
+  $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,$charge);
   if($cass_status === 'ok')
   {
 	array_push($response,array('response'=>'charged_successfull'));

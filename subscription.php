@@ -24,7 +24,9 @@ try{
 $subscription = new Subscription('https://developer.bdapps.com/subscription/send',$apppassword,$appid);
 //$status = $subscription->getStatus($address);
 $subscription->subscribe('tel:88'.$user_mobile);
+
 array_push($response,array('response'=>'ok'));
+
 //$responseMsg = ($status == "REGISTERED")? "1. unsubscribe" : " Thank you for your Subscription.";
 
 echo json_encode($response);
