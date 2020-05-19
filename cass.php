@@ -6,7 +6,7 @@ $appid = "APP_024542";
 $apppassword = "c48a35689fb237bdc7aa85626556b5dc";
 $user_mobile = $_POST['user_mobile'];
 $charge = $_POST['charge'];
-$response=array();
+
 
 //file_put_contents('ussd.txt',$_SERVER['REMOTE_ADDR']);
 
@@ -30,16 +30,16 @@ try{
   $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,$charge);
   if($cass_status === 'ok')
   {
-	array_push($response,array('response'=>'charged_successfull'));
+	$response = array('response'=>'charged_successfull');
   }
   else{
-	array_push($response,array('response'=>'charged_unsuccessfull'));
+	$response=array('response'=>'charged_unsuccessfull');
   }
   //echo $cass_status;
 	}
 	else
 	{
-		array_push($response,array('response'=>'not_subscribe'));
+		$response= array('response'=>'not_subscribe');
 	}
 
 

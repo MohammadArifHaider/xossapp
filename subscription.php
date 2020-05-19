@@ -5,7 +5,7 @@ require 'bdapps_cass_sdk.php';
 $appid = "APP_024542";
 $apppassword = "c48a35689fb237bdc7aa85626556b5dc";
 $user_mobile = $_POST['user_mobile'];
-$response=array();
+
 
 //file_put_contents('ussd.txt',$_SERVER['REMOTE_ADDR']);
 
@@ -25,7 +25,7 @@ $subscription = new Subscription('https://developer.bdapps.com/subscription/send
 //$status = $subscription->getStatus($address);
 $subscription->subscribe('tel:88'.$user_mobile);
 
-array_push($response,array('response'=>'ok'));
+$response =array('response'=>'ok');
 
 //$responseMsg = ($status == "REGISTERED")? "1. unsubscribe" : " Thank you for your Subscription.";
 
