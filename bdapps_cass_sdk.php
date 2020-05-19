@@ -474,7 +474,8 @@ class DirectDebitSender extends core{
         if(strcmp($statusCode, 'S1000')==0)
             return 'ok';
         else
-            throw new CassException($statusDetail, $statusCode);
+            return "not_ok";
+            //throw new CassException($statusDetail, $statusCode);
     }
 
 }

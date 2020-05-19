@@ -21,30 +21,10 @@ $production=true;
 try{
 	$subscription = new Subscription('https://developer.bdapps.com/subscription/send',$apppassword,$appid);
 	$subscription_status = $subscription->getStatus('tel:88'.$user_mobile);
-	//echo $subscription_status;
-	if($subscription_status==="REGISTERED")
-	{
+	
+
+  array_push($response,array('response'=>$subscription_status));
   
-  $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
-  $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,"0.1");
-  if($cass_status === 'ok')
-  {
-	array_push($response,array('response'=>'charged_successfull'));
-  }
-  else{
-	array_push($response,array('response'=>'charged_unsuccessfull'));
-  }
-  //echo $cass_status;
-	}
-	else
-	{
-		array_push($response,array('response'=>'not_subscribe'));
-	}
-
-
-
-
-//array_push($response,array('response'=>'ok'));
 echo json_encode($response);
 
 }
