@@ -22,8 +22,12 @@ try{
 	$subscription = new Subscription('https://developer.bdapps.com/subscription/send',$apppassword,$appid);
 	$subscription_status = $subscription->getStatus('tel:88'.$user_mobile);
 	echo $subscription_status;
-// $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
+	if($subscription_status==="REGISTERED")
+	{
+ //  $caas = new DirectDebitSender("https://developer.bdapps.com/caas/direct/debit",$appid,$apppassword);
 // $cass_status = $caas->cass($user_mobile,'tel:88'.$user_mobile,"2");
+	}
+
 
 
 
